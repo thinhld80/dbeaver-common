@@ -10,8 +10,11 @@
         <relativePath>../</relativePath>
     </parent>
     <artifactId>com.dbeaver.common.modules</artifactId>
-    <name>Common modules</name>
     <packaging>pom</packaging>
+
+    <name>Common modules</name>
+    <description>Common modules</description>
+    <url>https://github.com/dbeaver/dbeaver-common</url>
 
     <modules>
         <module>org.jkiss.utils</module>
