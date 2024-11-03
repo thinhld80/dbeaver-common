@@ -22,7 +22,7 @@ Various utilities (similar to Apache Commons and Google Guava).
 #### Maven:
 ```xml
     <dependency>
-      <groupId>com.dbeaver.jdbc</groupId>
+      <groupId>com.dbeaver.common</groupId>
       <artifactId>org.jkiss.utils</artifactId>
       <version>2.2.0</version>
     </dependency>
@@ -37,7 +37,7 @@ driver, connection, statements, result sets and metadata read.
 #### Maven:
 ```xml
     <dependency>
-      <groupId>com.dbeaver.jdbc</groupId>
+      <groupId>com.dbeaver.common</groupId>
       <artifactId>com.dbeaver.jdbc.api</artifactId>
       <version>2.2.0</version>
     </dependency>
@@ -50,7 +50,7 @@ Simple RPC client-server implementation.
 #### Maven:
 ```xml
     <dependency>
-      <groupId>com.dbeaver.jdbc</groupId>
+      <groupId>com.dbeaver.common</groupId>
       <artifactId>com.dbeaver.rpc</artifactId>
       <version>2.2.0</version>
     </dependency>
