@@ -11,3 +11,45 @@ It must be checked out in the same directory where the main repository is locate
 What is inside:
 - root: root Maven module for all projects. Defines base properties and dependencies (such as Tycho)
 - modules: base Java utilities
+
+## Modules:
+
+### [org.jkiss.utils](modules%2Forg.jkiss.utils)
+
+Various utilities (similar to Apache Commons and Google Guava).  
+#### Maven:
+```xml
+    <dependency>
+      <groupId>com.dbeaver.jdbc</groupId>
+      <artifactId>org.jkiss.utils</artifactId>
+      <version>2.2.0</version>
+    </dependency>
+```
+
+### [com.dbeaver.jdbc.api](modules%2Fcom.dbeaver.jdbc.api)
+
+Base module for custom JDBC drivers development.  
+Contains utility classes and classes implementing JDBC interfaces for 
+driver, connection, statements, result sets and metadata read. 
+
+#### Maven:
+```xml
+    <dependency>
+      <groupId>com.dbeaver.jdbc</groupId>
+      <artifactId>com.dbeaver.jdbc.api</artifactId>
+      <version>2.2.0</version>
+    </dependency>
+```
+
+### [com.dbeaver.rpc](modules%2Fcom.dbeaver.rpc)
+
+Simple RPC client-server implementation.
+
+#### Maven:
+```xml
+    <dependency>
+      <groupId>com.dbeaver.jdbc</groupId>
+      <artifactId>com.dbeaver.rpc</artifactId>
+      <version>2.2.0</version>
+    </dependency>
+```
