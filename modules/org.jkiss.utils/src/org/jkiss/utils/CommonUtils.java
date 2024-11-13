@@ -308,6 +308,33 @@ public class CommonUtils {
         return rootCause;
     }
 
+    @Nullable
+    public static <T extends Exception> T getCauseOfType(@NotNull Throwable ex, Class<T> causeClass) {
+        Throwable rootCause = ex;
+        for (; ; ) {
+            if (causeClass.isInstance(rootCause)) {
+                return causeClass.cast(rootCause);
+            }
+            if (rootCause.getCause() != null) {
+                rootCause = rootCause.getCause();
+            } else if (rootCause instanceof InvocationTargetException ite && ite.getTargetException() != null) {
+                rootCause = ite.getTargetException();
+            } else {
+                break;
+            }
+        }
+        return null;
+    }
+
+    public static boolean hasCause(Throwable ex, Class<? extends Throwable> causeClass) {
+        for (Throwable e = ex; e != null; e = e.getCause()) {
+            if (causeClass.isAssignableFrom(e.getClass())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static boolean equalObjects(@Nullable Object o1, @Nullable Object o2) {
         if (o1 == o2) {
             return true;
@@ -1136,4 +1163,5 @@ public class CommonUtils {
         }
         return String.join(":\n", result);
     }
+
 }
