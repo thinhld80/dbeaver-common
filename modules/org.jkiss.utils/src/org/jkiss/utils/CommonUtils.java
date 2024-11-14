@@ -1156,8 +1156,11 @@ public class CommonUtils {
         List<String> result = new ArrayList<>();
         while (e != null) {
             // skip empty messages
-            if (e.getMessage() != null) {
-                result.add(e.getMessage());
+            String message = e.getMessage();
+            if (message != null) {
+                if (result.isEmpty() || !result.get(result.size() - 1).contains(message)) {
+                    result.add(message);
+                }
             }
             e = e.getCause();
         }
