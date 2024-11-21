@@ -187,26 +187,31 @@ public abstract class AbstractJdbcResultSet<
                 return type.cast(new Timestamp(CommonJdbcConstants.ISO_TIMESTAMP_FORMAT.parse(value).getTime()));
             }
         } catch (ParseException e) {
-            throw new SQLException("Error parsing ISO date format", e);
+//            StringWriter buf = new StringWriter();
+//            e.printStackTrace(new PrintWriter(buf, true));
+            throw new SQLException("Error parsing ISO date format: " + e.getMessage(), e);
         }
     }
 
     @Override
     public Date getDate(int columnIndex, Calendar cal) throws SQLException {
         Object object = getObject(columnIndex);
-        return object == null ? null : parseDate(Date.class, object.toString());
+        return object == null ? null :
+            object instanceof Date date ? date : parseDate(Date.class, object.toString());
     }
 
     @Override
     public Time getTime(int columnIndex, Calendar cal) throws SQLException {
         Object object = getObject(columnIndex);
-        return object == null ? null : parseDate(Time.class, object.toString());
+        return object == null ? null :
+            object instanceof Time time ? time : parseDate(Time.class, object.toString());
     }
 
     @Override
     public Timestamp getTimestamp(int columnIndex, Calendar cal) throws SQLException {
         Object object = getObject(columnIndex);
-        return object == null ? null : parseDate(Timestamp.class, object.toString());
+        return object == null ? null :
+            object instanceof Timestamp timestamp ? timestamp : parseDate(Timestamp.class, object.toString());
     }
 
     @Override

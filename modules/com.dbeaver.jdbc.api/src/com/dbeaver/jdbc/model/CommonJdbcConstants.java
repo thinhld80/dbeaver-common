@@ -23,6 +23,6 @@ import java.text.SimpleDateFormat;
 public abstract class CommonJdbcConstants {
 
     public static final SimpleDateFormat ISO_TIMESTAMP_FORMAT = new SimpleDateFormat(StandardConstants.ISO_TIMESTAMP_PATTERN);
-    public static final SimpleDateFormat ISO_TIME_FORMAT = new SimpleDateFormat("HH:mm:ss'Z'");
-    public static final SimpleDateFormat ISO_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
+    public static final SimpleDateFormat ISO_TIME_FORMAT = new SimpleDateFormat(StandardConstants.ISO_TIME_PATTERN);
+    public static final SimpleDateFormat ISO_DATE_FORMAT = new SimpleDateFormat(StandardConstants.ISO_DATE_PATTERN);
 }
